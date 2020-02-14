@@ -16,11 +16,10 @@ public class SimpleCalc {
 		// TODO implement adding operation
 
 		try {
-			if (a > -10 && a < 10 && b > -10 && b < 10) {
-				return a + b;
-			} else {
-				return null;
-			}
+			validateInput(a, b);
+			validateOutput(a+b);
+			return a + b;
+			
 		} catch (Exception e) {
 			System.out.println("stacktrace");
 			return null;
@@ -30,11 +29,9 @@ public class SimpleCalc {
 
 	public static Integer subtract(int a, int b) {
 		try {
-			if (a > -10 && a < 10 && b > -10 && b < 10) {
-				return a - b;
-			} else {
-				return null;
-			}
+			validateInput(a, b);
+			validateOutput(a-b);
+			return a - b;
 		} catch (Exception e) {
 			System.out.println("stacktrace");
 			return null;
@@ -42,13 +39,12 @@ public class SimpleCalc {
 
 	}
 
-	public static Integer multiply(int a, int b) {
+	public static Integer multiply(int a, int b)  {
+		
 		try {
-			if (a > -10 && a < 10 && b > -10 && b < 10) {
-				return a * b;
-			} else {
-				return null;
-			}
+			validateInput(a, b);
+			validateOutput(a*b);
+			return a * b;
 		} catch (Exception e) {
 			System.out.println("stacktrace");
 			return null;
@@ -57,16 +53,16 @@ public class SimpleCalc {
 
 	public static Integer divide(int a, int b) {
 		try {
-			if (a > -10 && a < 10 && b > -10 && b < 10) {
-				return a / b;
-			} else {
-				return null;
-			}
+			validateInput(a, b);
+			validateOutput(a/b);
+			return a / b;
 		} catch (Exception e) {
 			System.out.println("stacktrace");
 			return null;
 		}
-	}
+	} 
+	// by parameter of constructor, which is also called "name"
+	// START
 
 	// TODO
 	/*
@@ -105,4 +101,19 @@ public class SimpleCalc {
 			throw new SimpleCalcException("Input value " + result + " is out of range [-10,10])");
 		}
 	}
+	
+	
+	public static void main (String[] args){
+		
+		
+		//System.out.println(multiply(10, -16));
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 }
