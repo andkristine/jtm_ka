@@ -46,6 +46,8 @@ public class PersonRepo {
 		
 		Person[] personArray = mapper.readValue(data, Person[].class);
 		List<Person> personList = Arrays.asList(personArray);
+		
+	    String s = String.join("\n", linesInList); 
 	}
 
 	public Person oldestPerson() {
@@ -84,9 +86,9 @@ public class PersonRepo {
 
 
 
-	//String res = "";
+	//String s = "";
 //    for (String str : lines) {res += str + "\n";}
-//String res = String.join("\n", linesInList); pirmais - kas ir japiekabina klat, otrs ir tas, no kurienes velamies nolasit
+//String s = String.join("\n", linesInList); pirmais - kas ir japiekabina klat, otrs ir tas, no kurienes velamies nolasit
 
 
 
