@@ -1,5 +1,7 @@
 package jtm.activity09;
 
+import java.util.Arrays;
+//import jtm.activity09.Order;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -44,16 +46,22 @@ public class Orders {
 	 */
 	
 	List<Orders> orderList; 
-	ListIterator<Orders> iterator = orderList.listIterator(); 
+	ListIterator<Orders> iterator; 
 	
 	public Orders() {
-		//Add no-argument constructor Orders() which initializes fields
+		orderList = Arrays.asList(); // te nav ieksa jabut objektiem?
+		iterator = orderList.listIterator();
 	}
 	
 	public void add(Order item) {
-		
+		this.orderList.add(item); // MUMS IR DOTS ORDERS LIST, LIDZ AR TO ORDERI NEVAR PIEVIENOT, JAPIELIDZINA ORDER INSTANCI NAKAMAJAM ORDERS ELEMENTAM
 	}
 	
-	
+	public List<Order> getItemsList(){
+		//returns copy of order list (return new list, by passing current list constructor)
+
+		List<Order> clonedList = Arrays.asList(); 
+		clonedList.addAll(this.orderList); // kapec sadi nevar?
+	}
 	
 }
