@@ -49,12 +49,13 @@ public class Orders {
 	ListIterator<Orders> iterator; 
 	
 	public Orders() {
-		orderList = Arrays.asList(); // te nav ieksa jabut objektiem?
+		orderList = Arrays.asList(); 
 		iterator = orderList.listIterator();
 	}
 	
 	public void add(Order item) {
-		this.orderList.add(item); // MUMS IR DOTS ORDERS LIST, LIDZ AR TO ORDERI NEVAR PIEVIENOT, JAPIELIDZINA ORDER INSTANCI NAKAMAJAM ORDERS ELEMENTAM
+		
+		this.orderList.add(item);
 	}
 	
 	public List<Order> getItemsList(){

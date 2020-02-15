@@ -29,20 +29,18 @@ public class Order implements Comparable<Order> {
 	String customer; // Name of the customer
 	String name; // Name of the requested item
 	int count; // Count of the requested items
-	
-	public Order (String orderer, String itemName, Integer count) {
+
+	public Order(String orderer, String itemName, Integer count) {
 		this.customer = orderer;
 		this.name = itemName;
 		this.count = count;
 	}
-	
+
 	@Override
 	public String toString() {
 		return name + ": " + customer + ": " + count;
 	}
-	
-	
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -55,14 +53,14 @@ public class Order implements Comparable<Order> {
 
 	@Override
 	public boolean equals(Object object) {
-		
-//		Method should return 0 if all fields between this and order are equal
-//		Method should return negative value if this is “smaller” than order 
-//		Method should return a positive value if this is “larger” than order 
 
-		
-	//	Hint: If you have implemented compareTo method, re-use it in equals. That is - if compareTo returns = objects are equal
-		
+		// Method should return 0 if all fields between this and order are equal
+		// Method should return negative value if this is “smaller” than order
+		// Method should return a positive value if this is “larger” than order
+
+		// Hint: If you have implemented compareTo method, re-use it in equals.
+		// That is - if compareTo returns = objects are equal
+
 		if (this == object)
 			return true;
 		if (object == null)
@@ -87,22 +85,33 @@ public class Order implements Comparable<Order> {
 
 	@Override
 	public int compareTo(Order order) {
-		// TODO Auto-generated method stub
-		return 0;
+
+		int comparison;
+
+		if (this.name == order.name) {
+			comparison = 0;
+		} else if (this.name.compareTo(order.name) > 0) {
+			comparison = +1;
+		} else {
+			comparison = -1;
+		}
+
+		if (this.customer == order.customer) {
+			comparison = 0;
+		} else if (this.customer.compareTo(order.customer) > 0) {
+			comparison = +1;
+		} else {
+			comparison = -1;
+		}
+		if (this.name == order.name) {
+			comparison = 0;
+		} else if (this.name.compareTo(order.name) > 0) {
+			comparison = +1;
+		} else {
+			comparison = -1;
+		}
+
+		return comparison;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
