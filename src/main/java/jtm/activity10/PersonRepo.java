@@ -32,11 +32,6 @@ public class PersonRepo {
 		ObjectMapper mapper = new ObjectMapper();
 		String str = "";
 		try {
-			// 1. Read file data.json from resources folder into String
-			// 2. Use ObjectMapper to convert String to List of Persons and
-			// store in personList field
-			// Hint: Correct way how to use ObjectMapper to convert String to
-			// List belowObjectMapper mapper = new ObjectMapper();
 
 			linesInList = Files.readAllLines(Paths.get("/home/student/Desktop/JTM_KA/src/main/resources/data.json"));
 			str = String.join("\n", linesInList);
@@ -51,6 +46,20 @@ public class PersonRepo {
 	}
 
 	public Person oldestPerson() {
+		
+		for (int i = 0; i < personList.size(); i++) { // ka paradit, kurs pec kartas ir cilveks listaa,
+														//lidzigi, ka to vajadzetu izdarit arraja?
+		}
+			
+			if () {
+				
+				personlist[i];
+				
+		}
+		
+		
+		
+		
 		// Find oldest person in personList field and return it
 		return null;
 	}
@@ -66,9 +75,12 @@ public class PersonRepo {
 
 		for (int i = 0; i < linesInList.size(); i++) {
 			// pievienot jaunu elementu listā
-			// ar true/false japajauta, vai jau eksiste si valsts
-			if (person.getCountry().equals(person.getCountry())) {
-
+			boolean countryInList = false;
+			int indexOfTheCountry = 0;
+			if (!person.getCountry().equals(person.getCountry())) {
+						// vai 	boolean countryInList = false; nav tas pats, kas 
+						// !person.getCountry().equals(person.getCountry())
+				indexOfTheCountry = +1;
 			} else {
 
 			}
@@ -80,8 +92,6 @@ public class PersonRepo {
 
 	public static void main(String[] args) {
 		PersonRepo personRepo = new PersonRepo();
-		// personRepo.toString()
-		// System.out.println();
 
 	}
 
