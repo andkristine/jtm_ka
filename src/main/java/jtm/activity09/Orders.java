@@ -68,7 +68,7 @@ public class Orders {
 		// constructor)
 		List<Order> clonedList = Arrays.asList();
 		clonedList.addAll(this.orderList); // HOW TO PASS THE CONTRUCTOR???
-		return clonedList;
+		return clonedList; // sort, tad divi cikli, kura pasreizeja lielaka valsts, pec tam kura jauna
 	}
 
 	public Set<Order> getItemsSet() {

@@ -13,13 +13,11 @@ public class SimpleCalc {
 	 */
 
 	public static Integer add(int a, int b) {
-		// TODO implement adding operation
 
 		try {
 			validateInput(a, b);
 			validateOutput(a+b);
 			return a + b;
-			
 		} catch (Exception e) {
 			System.out.println("stacktrace");
 			return null;
@@ -75,17 +73,12 @@ public class SimpleCalc {
 
 	private static void validateInput(int a, int b) throws SimpleCalcException {
 
-		// try{
-
-		if (a < -10 && a > 10) {
+		if (a < -10 || a > 10) {
 			throw new SimpleCalcException("Input value " + a + " is out of range [-10,10])");
-		} else if (b < -10 && b > 10) {
+			
+		} else if (b < -10 || b > 10) {
 			throw new SimpleCalcException("Input value " + b + " is out of range [-10,10])");
 		}
-
-//        }catch(Exception e){
-//
-//            throw new SimpleCalcException("Input value " + a + " is out of range [-10,10])"); 
 
 	}
 
@@ -97,7 +90,7 @@ public class SimpleCalc {
 	 * result of executed operation
 	 */
 	private static void validateOutput(int result) throws SimpleCalcException {
-		if (result < -10 && result > 10) {
+		if (result < -10 || result > 10) {
 			throw new SimpleCalcException("Input value " + result + " is out of range [-10,10])");
 		}
 	}
@@ -105,9 +98,7 @@ public class SimpleCalc {
 	
 	public static void main (String[] args){
 		
-		
-		//System.out.println(multiply(10, -16));
-		
+		System.out.println(add(10, -16));
 		
 	}
 	
