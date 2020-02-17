@@ -1,9 +1,14 @@
 package jtm.activity09;
 
 import java.util.Arrays;
-//import jtm.activity09.Order;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Set;
+
+import antlr.StringUtils;
 
 /*- TODO #2
  * Implement Iterator interface with Orders class
@@ -44,25 +49,42 @@ public class Orders {
 	 *   2. when constructing list of orders, set number of current order to -1
 	 *      (which is usual approach when working with iterateable collections).
 	 */
-	
-	List<Orders> orderList; 
-	ListIterator<Orders> iterator; 
-	
+
+	List<Order> orderList;
+	ListIterator<Order> iterator;
+
 	public Orders() {
-		orderList = Arrays.asList(); 
-		iterator = orderList.listIterator();
+		orderList = Arrays.asList();
+		iterator = ((List<Order>) iterator).listIterator();
 	}
-	
+
 	public void add(Order item) {
-		
+
 		this.orderList.add(item);
 	}
-	
-	public List<Order> getItemsList(){
-		//returns copy of order list (return new list, by passing current list constructor)
 
-		List<Order> clonedList = Arrays.asList(); 
-		clonedList.addAll(this.orderList); // kapec sadi nevar?
+	public List<Order> getItemsList() {
+		// returns copy of order list (return new list, by passing current list
+		// constructor)
+		List<Order> clonedList = Arrays.asList();
+		clonedList.addAll(this.orderList); // HOW TO PASS THE CONTRUCTOR???
+		return clonedList;
 	}
-	
+
+	public Set<Order> getItemsSet() {
+		Set<Order> orderSet = new HashSet<>(Arrays.asList());
+		return orderSet;
+	}
+
+	public void sort() {
+		Collections.sort(orderList);
+	}
+
+	@Override
+	public String toString() {
+
+		String orderString = String.join("\n", orderList);
+		return orderString;
+	}
+
 }
