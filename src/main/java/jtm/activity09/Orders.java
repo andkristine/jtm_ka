@@ -1,5 +1,6 @@
 package jtm.activity09;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -54,20 +55,21 @@ public class Orders implements Iterator<Order> {
 	ListIterator<Order> iterator;
 
 	public Orders() {
-		orderList = Arrays.asList();
-		iterator = ((List<Order>) iterator).listIterator();
+		orderList = new ArrayList();
+		iterator = orderList.listIterator(); 
 	}
 
 	public void add(Order item) {
 		
 		this.orderList.add(item);
+		// japievieno visi lauki??? nevis visu objektu ka vienu gab?
 	}
 
 	public List<Order> getItemsList() {
 		// returns copy of order list (return new list, by passing current list
 		// constructor)
 		List<Order> clonedList = Arrays.asList();
-		clonedList.addAll(this.orderList); // HOW TO PASS THE CONTRUCTOR???
+		clonedList.addAll(this.orderList); 
 		return clonedList; // sort, tad divi cikli, kura pasreizeja lielaka valsts, pec tam kura jauna
 	}
 
@@ -82,23 +84,24 @@ public class Orders implements Iterator<Order> {
 
 	@Override
 	public String toString() {
-
-		String orderString = String.join("\n", orderList); // kapec te sadi nevar????
-		return orderString;
-	}
-
-	@Override
-	public boolean hasNext() { //?????????????
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
-	public void remove() { //???????????
+		String orderString = String.join("\n", orderList); //nestarda, jo nav string, bet gan objektu arrajs
+		return "";
 		
 	}
 
 	@Override
-	public Order next() { //????????????
+	public boolean hasNext() { 
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public void remove() { 
+		
+	}
+
+	@Override
+	public Order next() {
 		// TODO Auto-generated method stub
 		return null;
 	}
