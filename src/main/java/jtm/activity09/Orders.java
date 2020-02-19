@@ -38,7 +38,7 @@ import antlr.StringUtils;
  *  - ItemN: Customer1,Customer2: 4
  */
 
-public class Orders {
+public class Orders implements Iterator<Order> {
 	/*-
 	 * TODO #1
 	 * Create data structure to hold:
@@ -59,7 +59,7 @@ public class Orders {
 	}
 
 	public void add(Order item) {
-
+		
 		this.orderList.add(item);
 	}
 
@@ -83,8 +83,33 @@ public class Orders {
 	@Override
 	public String toString() {
 
-		String orderString = String.join("\n", orderList);
+		String orderString = String.join("\n", orderList); // kapec te sadi nevar????
 		return orderString;
 	}
+
+	@Override
+	public boolean hasNext() { //?????????????
+		// TODO Auto-generated method stub
+		return false;
+	}
+	
+	public void remove() { //???????????
+		
+	}
+
+	@Override
+	public Order next() { //????????????
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

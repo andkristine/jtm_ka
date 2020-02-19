@@ -115,7 +115,9 @@ public class Person {
 	}
 
 
-    
+	public String personToString(){
+		return "Birth date:" + this.getBirthDate() + ", Country:" + this.country;
+	}
 
 
 }
