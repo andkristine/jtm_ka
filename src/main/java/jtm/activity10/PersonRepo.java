@@ -33,14 +33,15 @@ public class PersonRepo {
 		String str = "";
 		try {
 
-			linesInList = Files.readAllLines(Paths.get("/home/student/Desktop/JTM_KA/src/main/resources/data.json"));
-			// linesInList = Files
-			// .readAllLines(Paths.get("C:/Users/Kristine/Desktop/Sources/JTM_KA/src/main/resources/data.json"));
+			// linesInList =
+			// Files.readAllLines(Paths.get("/home/student/Desktop/JTM_KA/src/main/resources/data.json"));
+			linesInList = Files
+					.readAllLines(Paths.get("C:/Users/Kristine/Desktop/Sources/JTM_KA/src/main/resources/data.json"));
 			str = String.join("\n", linesInList);
 			Person[] personArray = mapper.readValue(str, Person[].class);
 			personList = Arrays.asList(personArray);
 
-			System.out.println(linesInList);
+			//System.out.println(linesInList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -82,21 +83,36 @@ public class PersonRepo {
 
 		HashMap<String, Integer> bodyCount = new HashMap<>();
 
-		for (int i = 0; i < linesInList.size(); i++) {
+		for (int i = 0; i < personList.size(); i++) {
 			if (bodyCount.containsKey(personList.get(i).getCountry())) {
-				bodyCount.replace(personList.get(i).getCountry(), +1);
-			}
 
+				bodyCount.put(personList.get(i).getCountry(), bodyCount.get(personList.get(i).getCountry()) + 1);
+
+			} else {
+				
+				bodyCount.put(personList.get(i).getCountry(), 1);
+				
+			}
+			
 		}
-	
-		return bodyCount.toString();
+		System.out.println(bodyCount.toString());
+		
+		for () {
+			
+		}
+		
+		
+		
+		
+		
+		return "";
 	}
 
 	public static void main(String[] args) {
 		PersonRepo personRepo = new PersonRepo();
 		System.out.println(personRepo.oldestPerson().personToString());
 		System.out.println(personRepo.youngestPerson().personToString());
-		//System.out.println(personRepo.largestPopulation());
+		System.out.println(personRepo.largestPopulation());
 	}
 
 }
