@@ -78,8 +78,7 @@ public class PersonRepo {
 
 	}
 
-	public String largestPopulation() { // hash map, pirmais elements valsts,
-										// otrs cilveku skaits
+	public String largestPopulation() { 
 
 		HashMap<String, Integer> bodyCount = new HashMap<>();
 
