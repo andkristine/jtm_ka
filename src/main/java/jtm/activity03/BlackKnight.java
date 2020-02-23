@@ -26,9 +26,9 @@ public class BlackKnight {
 		// Reset total numbers of total and alive knights to zero
 		// START
 		knights = new BlackKnight[initialNumber];
-//		for (int i = 0; i < knights.length; i++) {
-//			knights[i] = new BlackKnight("John", (byte) 2, (byte) 2, (byte) 1, true);
-//		}
+		for (int i = 0; i < knights.length; i++) {
+			knights[i] = new BlackKnight("John", (byte) 2, (byte) 2, (byte) 1, true);
+		}
 		totalKnights = 0;
 		aliveKnights = 0;
 		// END
@@ -51,14 +51,14 @@ public class BlackKnight {
 		this.alive = alive;
 
 		for (int i = 0; i < knights.length; i++) {
-			// BlackKnight blackKnight; THIS jau ir black knight
+
 			if (knights[i] == null) {
 
 				knights[i] = this;
 				if (knights[i].alive == true) {
 					aliveKnights++;
 				}
-				
+
 				break;
 			}
 
@@ -66,13 +66,11 @@ public class BlackKnight {
 
 		// END
 	}
-	
+
 	@Override
 	public String toString() {
-	//	String msg = "Name:" + this.name + ", arms:" +this.arms + ", legs:" + this.legs + ", head:" + this.head;
-	
-		
-		return "Name:" + this.name + ", arms:" +this.arms + ", legs:" + this.legs + ", head:" + this.head;
+
+		return "Name:" + this.name + ", arms:" + this.arms + ", legs:" + this.legs + ", head:" + this.head;
 	}
 
 	public String cutOffArm() {
@@ -140,7 +138,7 @@ public class BlackKnight {
 					}
 				}
 				return msg + " will still fight!";
-			
+
 			}
 		} else {
 			return "You'll burn in hell forever!";
@@ -150,7 +148,7 @@ public class BlackKnight {
 	}
 
 	// START
-	
+
 	private String aliveKnights() {
 		// TODO
 		// Build comma separated string of knights who are still alive
@@ -160,7 +158,7 @@ public class BlackKnight {
 		String msg = "";
 		if (aliveKnights > 0) {
 			boolean nameAdded = false;
-			
+
 			for (int i = 0; i < knights.length; i++) {
 				if (knights[i].alive) {
 					if (nameAdded == true) {
@@ -170,35 +168,31 @@ public class BlackKnight {
 					nameAdded = true;
 				}
 			}
-			
+
 		}
 		return msg;
-		//return null;
+		// return null;
 	}
 	// END
 
 	public static void main(String[] args) {
-		BlackKnight.setBattle(4);
-		BlackKnight creed = new BlackKnight("Creed", (byte) 2, (byte) 2, (byte) 1, true);
-		BlackKnight michael = new BlackKnight("Michael", (byte) 2, (byte) 2, (byte) 1, true);
-		BlackKnight jim = new BlackKnight("Jim", (byte) 2, (byte) 2, (byte) 1, true);
-		BlackKnight dwight = new BlackKnight("Dwight", (byte) 2, (byte) 2, (byte) 1, true);
-		dwight.cutOffHead();
-		creed.cutOffArm();
-		creed.cutOffHead();
-		michael.cutOffLeg();
-		System.out.println(michael.toString());
-		System.out.println(creed.aliveKnights());
-		System.out.println(aliveKnights);
-		
-		System.out.println(creed.cutOffHead());
-		System.out.println(creed.toString());
-		
+//		BlackKnight.setBattle(4);
+//		BlackKnight creed = new BlackKnight("Creed", (byte) 2, (byte) 2, (byte) 1, true);
+//		BlackKnight michael = new BlackKnight("Michael", (byte) 2, (byte) 2, (byte) 1, true);
+//		BlackKnight jim = new BlackKnight("Jim", (byte) 2, (byte) 2, (byte) 1, true);
+//		BlackKnight dwight = new BlackKnight("Dwight", (byte) 2, (byte) 2, (byte) 1, true);
+//		dwight.cutOffHead();
+//		creed.cutOffArm();
+//		creed.cutOffHead();
+//		michael.cutOffLeg();
+//		System.out.println(michael.toString());
+//		System.out.println(creed.aliveKnights());
+//		System.out.println(aliveKnights);
+//
+//		System.out.println(creed.cutOffHead());
+//		System.out.println(creed.toString());
+
 	}
 
 }
 //VAI IELIKT IEKSA TOS NOSACIJUMUS, KA NEVAR BUT -1 ROKAS UN -1 KAJAS?
-
-
-
-

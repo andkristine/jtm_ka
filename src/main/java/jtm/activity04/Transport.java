@@ -97,15 +97,20 @@ public class Transport {
 		// fuel:0.00l, fuel in tank:0.00l"
 		float necessaryFuel = road.getDistance() * consumption / 100;
 		if (getFuelInTank() >= necessaryFuel) {
+			this.fuelInTank = this.fuelInTank - necessaryFuel;
 			return String.format(Locale.US, "%s is moving on %s", getType(), road.toString());
 		} else {
-			return String.format(Locale.US, "Cannot move %s. Necessary fuel:%.2fl, fuel in the tank: %.2fl",
+			return String.format(Locale.US, "Cannot move on %s. Necessary fuel:%.2fl, fuel in tank:%.2fl",
 					road.toString(), necessaryFuel, fuelInTank);
 			// return "Cannot move %s" + road.toString() + " necessary fuel:" +
 			// road.getDistance() * consumption / 100
 			// + "l, fuel in tank:" + fuelInTank + "l";
+			
 		}
 
 	}
+	
+	
+	
 
 }
