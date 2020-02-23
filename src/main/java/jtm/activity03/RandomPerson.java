@@ -11,11 +11,11 @@ public class RandomPerson {
 	// HINT: use Alt+Shift+A to switch to Block selection (multi-line cursor)
 	// to edit list of all properties at once
 	// START	
-	private String name = "ff";
-	private int age = 43;
-	private float weight= 45;
-	private boolean isFemale = true;
-	private char smile = 's';
+	private String name = null;
+	private int age = 0;
+	private float weight= 0;
+	private boolean isFemale = false;
+	private char smile = 0;
 	// END
 	
 	
@@ -44,8 +44,16 @@ public class RandomPerson {
 		return isFemale;
 	}
 	
-	public void isFemale(boolean isFemale){
+	public void setFemale(boolean isFemale){
 		this.isFemale = isFemale;
+	}
+	
+	public char getSmile () {
+		return smile;
+	}
+	
+	public void setSmile (char smile) {
+		this.smile = smile;
 	}
 	
 	// END

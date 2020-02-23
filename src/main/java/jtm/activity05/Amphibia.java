@@ -10,7 +10,7 @@ public class Amphibia extends jtm.activity04.Transport {
 	private byte sails; //es uztaisiju
 	private int wheels; //es uztaisiju
 
-	private Amphibia (String id, float consumption, int tankSize, byte sails, int wheels){
+	public Amphibia (String id, float consumption, int tankSize, byte sails, int wheels){
 		super(id, consumption, tankSize);
 		this.sails = sails;
 		this.wheels = wheels;
