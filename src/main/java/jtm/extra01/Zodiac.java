@@ -96,11 +96,6 @@ public class Zodiac {
 			System.out.println("Nu such month");
 		}
 
-		// TODO #1: Implement method which return zodiac sign names
-		// As method parameter - day and month;
-		// Look at wikipedia:
-		// https://en.wikipedia.org/wiki/Zodiac#Table_of_dates
-		// Tropical zodiac, to get appropriate date ranges for signs
 		return zodiac;
 	}
 
