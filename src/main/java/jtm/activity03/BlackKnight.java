@@ -29,14 +29,15 @@ public class BlackKnight {
 //		for (int i = 0; i < knights.length; i++) {
 //			knights[i] = new BlackKnight("John", (byte) 2, (byte) 2, (byte) 1, true);
 //		}
-		totalKnights = 0;
+		totalKnights = 3;
 		aliveKnights = 0;
 		// END
 	}
 
 
 
-	public BlackKnight(String name, byte arms, byte legs, byte head, boolean alive) {
+	public BlackKnight(String name) {
+//public BlackKnight(String name, byte arms, byte legs, byte head, boolean alive) {
 		// TODO set name of newly created knight
 		// 1. set proper count of his arms, legs and head,
 		// 2. set his status to alive
@@ -47,10 +48,10 @@ public class BlackKnight {
 		// by parameter of constructor, which is also called "name"
 		// START
 		this.name = name;
-		this.arms = arms;
-		this.legs = legs;
-		this.head = head;
-		this.alive = alive;
+		this.arms = 2;
+		this.legs = 2;
+		this.head = 1;
+		this.alive = true;
 
 		for (int i = 0; i < knights.length; i++) {
 
@@ -131,7 +132,7 @@ public class BlackKnight {
 			this.alive = false;
 			if (aliveKnights > 0) {
 				boolean nameAdded;
-				String msg = "You'll never win";
+				String msg = "You'l newer win! ";
 				for (int i = 0; i < knights.length; i++) {
 					if (knights[i].alive == true) {
 						if (nameAdded = true) {

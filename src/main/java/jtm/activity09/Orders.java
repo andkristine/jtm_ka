@@ -104,8 +104,8 @@ public class Orders implements Iterator<Order> {
 
 	public void remove() {
 
-		throw new UnsupportedOperationException("remove");
-
+		
+		
 	}
 
 	@Override

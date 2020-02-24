@@ -12,13 +12,13 @@ public class Ship extends jtm.activity04.Transport {
 	}
 
 	public String move(Road road) {
-	if (road instanceof WaterRoad)	{
-		return super.getId() + " " + this.getClass().getSimpleName() + " is sailing on " + road.toString() + " with " + sails
-				+ " sails";
-	} else{ 
-		return "Cannot sail on " + road.toString();
-		
-	}
+		if (road instanceof WaterRoad) {
+			return super.getId() + " " + this.getClass().getSimpleName() + " is sailing on " + road.toString()
+					+ " with " + sails + " sails";
+		} else {
+			return "Cannot sail on " + road.toString();
+
+		}
 
 	}
-	}
+}
