@@ -62,16 +62,17 @@ public class Orders implements Iterator<Order> {
 
 	public void add(Order item) {
 
-		this.orderList.add(item);
-		// japievieno visi lauki??? nevis visu objektu ka vienu gab?
+		this.iterator.add(item);
+		iterator.previous();
+	
 	}
 
 	public List<Order> getItemsList() {
 		// returns copy of order list (return new list, by passing current list
 		// constructor)
-		List<Order> clonedList = Arrays.asList();
-		clonedList.addAll(this.orderList);
-		return clonedList; // sort, tad divi cikli, kura pasreizeja lielaka valsts, pec tam kura jauna
+//		List<Order> clonedList = Arrays.asList();
+//		clonedList.addAll(this.orderList);
+		return new ArrayList<>(orderList); 
 	}
 
 	public Set<Order> getItemsSet() {
@@ -86,25 +87,20 @@ public class Orders implements Iterator<Order> {
 	@Override
 	public String toString() {
 
-		// String orderString = String.join("\n", orderList); //nestarda, jo nav string,
-		// bet gan objektu arrajs
-		return "";
+		
+		return orderList.toString();
 
 	}
 
 	@Override
 	public boolean hasNext() {
 
-		if (iterator.hasNext()) {
-			return true;
-		} else {
-			return false;
-		}
+		return iterator.hasNext();
 	}
 
 	public void remove() {
 
-		
+		iterator.remove();
 		
 	}
 

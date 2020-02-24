@@ -181,23 +181,18 @@ public class BlackKnight {
 	// END
 
 	public static void main(String[] args) {
-//		BlackKnight.setBattle(4);
-//		BlackKnight creed = new BlackKnight("Creed", (byte) 2, (byte) 2, (byte) 1, true);
-//		BlackKnight michael = new BlackKnight("Michael", (byte) 2, (byte) 2, (byte) 1, true);
-//		BlackKnight jim = new BlackKnight("Jim", (byte) 2, (byte) 2, (byte) 1, true);
-//		BlackKnight dwight = new BlackKnight("Dwight", (byte) 2, (byte) 2, (byte) 1, true);
-//		dwight.cutOffHead();
-//		creed.cutOffArm();
-//		creed.cutOffHead();
-//		michael.cutOffLeg();
-//		System.out.println(michael.toString());
-//		System.out.println(creed.aliveKnights());
-//		System.out.println(aliveKnights);
-//
-//		System.out.println(creed.cutOffHead());
-//		System.out.println(creed.toString());
+		BlackKnight.setBattle(4);
+		BlackKnight creed = new BlackKnight("Creed");
+		BlackKnight michael = new BlackKnight("Michael");
+		BlackKnight jim = new BlackKnight("Jim");
+		BlackKnight dwight = new BlackKnight("Dwight");
+		
+		creed.cutOffArm();
+		
+		
+		System.out.println(dwight.cutOffHead());
 
 	}
 
 }
-//VAI IELIKT IEKSA TOS NOSACIJUMUS, KA NEVAR BUT -1 ROKAS UN -1 KAJAS?
+
