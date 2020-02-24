@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 import java.util.Set;
 
 import antlr.StringUtils;
@@ -56,11 +57,11 @@ public class Orders implements Iterator<Order> {
 
 	public Orders() {
 		orderList = new ArrayList();
-		iterator = orderList.listIterator(); 
+		iterator = orderList.listIterator();
 	}
 
 	public void add(Order item) {
-		
+
 		this.orderList.add(item);
 		// japievieno visi lauki??? nevis visu objektu ka vienu gab?
 	}
@@ -69,7 +70,7 @@ public class Orders implements Iterator<Order> {
 		// returns copy of order list (return new list, by passing current list
 		// constructor)
 		List<Order> clonedList = Arrays.asList();
-		clonedList.addAll(this.orderList); 
+		clonedList.addAll(this.orderList);
 		return clonedList; // sort, tad divi cikli, kura pasreizeja lielaka valsts, pec tam kura jauna
 	}
 
@@ -84,35 +85,38 @@ public class Orders implements Iterator<Order> {
 
 	@Override
 	public String toString() {
-	
-		String orderString = String.join("\n", orderList); //nestarda, jo nav string, bet gan objektu arrajs
+
+		// String orderString = String.join("\n", orderList); //nestarda, jo nav string,
+		// bet gan objektu arrajs
 		return "";
-		
+
 	}
 
 	@Override
-	public boolean hasNext() { 
-		// TODO Auto-generated method stub
-		return false;
+	public boolean hasNext() {
+
+		if (iterator.hasNext()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
-	
-	public void remove() { 
-		
+
+	public void remove() {
+
+		throw new UnsupportedOperationException("remove");
+
 	}
 
 	@Override
 	public Order next() {
-		// TODO Auto-generated method stub
-		return null;
+
+		if (iterator.hasNext()) {
+			Order o = iterator.next();
+			return o;
+		} else {
+			throw new NoSuchElementException();
+		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 }

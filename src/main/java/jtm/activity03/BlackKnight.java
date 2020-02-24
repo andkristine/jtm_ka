@@ -20,19 +20,21 @@ public class BlackKnight {
 	public String name; // knight name
 	public byte arms, legs, head; // number of limbs
 	public boolean alive; // is knight alive
-
+	
 	public static void setBattle(int initialNumber) {
 		// TODO initialize new array of knights with the passed size.
 		// Reset total numbers of total and alive knights to zero
 		// START
 		knights = new BlackKnight[initialNumber];
-		for (int i = 0; i < knights.length; i++) {
-			knights[i] = new BlackKnight("John", (byte) 2, (byte) 2, (byte) 1, true);
-		}
+//		for (int i = 0; i < knights.length; i++) {
+//			knights[i] = new BlackKnight("John", (byte) 2, (byte) 2, (byte) 1, true);
+//		}
 		totalKnights = 0;
 		aliveKnights = 0;
 		// END
 	}
+
+
 
 	public BlackKnight(String name, byte arms, byte legs, byte head, boolean alive) {
 		// TODO set name of newly created knight
@@ -44,10 +46,10 @@ public class BlackKnight {
 		// HINT: use "this.name" to access name of knight which otherwise is shadowed
 		// by parameter of constructor, which is also called "name"
 		// START
-		this.name = "Meredith";
-		this.arms = 2;
-		this.legs = 2;
-		this.head = 1;
+		this.name = name;
+		this.arms = arms;
+		this.legs = legs;
+		this.head = head;
 		this.alive = alive;
 
 		for (int i = 0; i < knights.length; i++) {
@@ -66,6 +68,8 @@ public class BlackKnight {
 
 		// END
 	}
+	
+
 
 	@Override
 	public String toString() {
