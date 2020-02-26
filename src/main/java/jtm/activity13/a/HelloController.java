@@ -20,7 +20,7 @@ public class HelloController {
 	/*
 	 * TODO Set REST method path to /numbers
 	 */
-	@GetMapping
+	@GetMapping (value = "/numbers")
 	public String numbers(@RequestParam(required = false, defaultValue = "1") Integer from,
 			@RequestParam(required = false, defaultValue = "20") Integer to) {
 		/*

@@ -9,6 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class TeacherManager {
 
 	public static void main(String[] args) {
@@ -83,7 +86,7 @@ public class TeacherManager {
 	}
 
 	
-	public boolean insertTeacher(String firstName, String lastName) {
+	public boolean insertTeacher(String firstName, String lastName) { // ja ir null
 		
 		boolean success = false;
 
@@ -110,7 +113,7 @@ public class TeacherManager {
 
 	}
 
-	public boolean insertTeacher(Teacher teacher) {
+	public boolean insertTeacher(Teacher teacher) { // ja nav null
 	
 
 		boolean success = false;
